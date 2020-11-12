@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { choice } from "./helpers";
+import Coin from "./Coin";
+
 class CoinContainer extends Component {
   static defaultProps = {
     coins: [
@@ -35,6 +37,7 @@ class CoinContainer extends Component {
     return (
       <div className="CoinContainer">
         <h1>Let's flip a coin!</h1>
+        {this.state.currentCoin && <Coin info={this.state.currentCoin} />}
         <button onClick={this.handleClick}>FLIP ME!</button>
         <p>Out of {this.state.nFlips} flips, there have been {this.state.nHeads} heads and {this.state.nTails} tails.</p>
       </div>
